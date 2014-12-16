@@ -1,0 +1,26 @@
+{
+  "name": "deleted",
+  "version": "0.0.1beta1",
+  "homepage": "https://github.com/johnotander/deleted",
+  "authors": [
+    "John Otander <johnotander@gmail.com>"
+  ],
+  "description": "A slightly different user experience for hard deletes.",
+  "main": "js/deleted.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "delete",
+    "deletion",
+    "hard-delete"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

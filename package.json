@@ -1,0 +1,24 @@
+{
+  "name": "deleted",
+  "version": "0.0.1-beta1",
+  "description": "A slightly different user experience for hard deletes.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johnotander/deleted.git"
+  },
+  "keywords": [
+    "delete",
+    "hard-delete",
+    "deletion"
+  ],
+  "author": "John Otander <johnotander@gmail.com> (http://johnotander.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnotander/deleted/issues"
+  },
+  "homepage": "https://github.com/johnotander/deleted"
+}
