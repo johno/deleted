@@ -1,0 +1,46 @@
+.btn--link {
+  padding: 0.5rem 1rem;
+  color: #3498db;
+  text-decoration: none;
+  text-align: center; }
+  .btn--link:hover {
+    background-color: transparent;
+    color: #1d6fa5; }
+
+.btn--red {
+  background-color: #ff4136;
+  border: 2px solid #ccc;
+  border-color: #f53c31;
+  border-radius: 3px;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  text-align: center; }
+  .btn--red:hover, .btn--red:focus, .btn--red:active {
+    color: #fff;
+    background-color: #e83b31; }
+
+.btn--sm {
+  font-size: 0.707em; }
+
+[data-delete].btn--red {
+  padding: 0.5rem 1rem;
+  position: relative;
+  z-index: 99; }
+
+[data-delete] .dropdown {
+  background-color: #fff;
+  border: thin solid #ddd;
+  color: #444;
+  display: none;
+  padding: .5rem;
+  position: absolute;
+  text-align: left;
+  width: 300%;
+  z-index: 1; }
+
+[data-delete] .dropdown .actions {
+  text-align: right; }
+
+[data-delete].is-open .dropdown {
+  display: block; }
