@@ -8,10 +8,10 @@ var rename = require('gulp-rename');
 
 gulp.task('css', function() {
   gulp.src('css/deleted.css')
-    .pipe(size())
+    .pipe(size({ showFiles: true, gzip: true }))
     .pipe(cssMin())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(size())
+    .pipe(size({ showFiles: true, gzip: true }))
     .pipe(gulp.dest('css'));
 });
 
@@ -22,10 +22,10 @@ gulp.task('csslint', ['css'], function() {
 
 gulp.task('js', function() {
   gulp.src('js/deleted.js')
-    .pipe(size())
+    .pipe(size({ showFiles: true, gzip: true }))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(size())
+    .pipe(size({ showFiles: true, gzip: true }))
     .pipe(gulp.dest('js'));
 });
 
