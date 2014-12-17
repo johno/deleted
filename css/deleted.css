@@ -28,13 +28,13 @@
   font-size: 0.707em;
 }
 
-[data-delete].btn--red {
+[data-deleted].btn--red {
   padding: 0.5rem 1rem;
   position: relative;
   z-index: 99;
 }
 
-[data-delete] .dropdown {
+[data-deleted] .dropdown {
   background-color: #fff;
   border: thin solid #ddd;
   color: #444;
@@ -46,10 +46,10 @@
   z-index: 1;
 }
 
-[data-delete] .dropdown .actions {
+[data-deleted] .dropdown .actions {
   text-align: right;
 }
 
-[data-delete].is-open .dropdown {
+[data-deleted].is-open .dropdown {
   display: block;
 }

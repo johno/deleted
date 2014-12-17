@@ -22,7 +22,7 @@
   }
 
   function isOpen(elem) {
-    if (elem.getAttribute('data-delete')) {
+    if (elem.getAttribute('data-deleted')) {
       return elem.className.indexOf('is-open') > -1; 
     } else {
       return true;
@@ -72,7 +72,7 @@
     return dropdown;
   }
 
-  var buttons = document.querySelectorAll('[data-delete]');
+  var buttons = document.querySelectorAll('[data-deleted]');
 
   [].forEach.call(buttons, function(button) {
     button.addEventListener('click', onDeleteButtonClick, false);
