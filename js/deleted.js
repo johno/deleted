@@ -1,3 +1,11 @@
+/**
+ * deleted - A slightly different user experience for hard deletes.
+ * @author John Otander <johnotander@gmail.com> (http://johnotander.com/)
+ * @version v0.0.1beta2
+ * @link https://github.com/johnotander/deleted
+ * @license MIT
+ */
+
 (function() {
   function onDeleteButtonClick(event) {
     var isAlreadyOpen = isOpen(event.target);
@@ -23,7 +31,7 @@
 
   function isOpen(elem) {
     if (elem.getAttribute('data-deleted')) {
-      return elem.className.indexOf('is-open') > -1; 
+      return elem.className.indexOf('is-open') > -1;
     } else {
       return true;
     }

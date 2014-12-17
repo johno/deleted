@@ -5,11 +5,22 @@ var uglify = require('gulp-uglify');
 var jshint = require('gulp-jshint');
 var size = require('gulp-size');
 var rename = require('gulp-rename');
+var header = require('gulp-header');
+
+var pkg = require('./package.json');
+var banner = ['/**',
+              ' * <%= pkg.name %> - <%= pkg.description %>',
+              ' * @author <%= pkg.author %>',
+              ' * @version v<%= pkg.version %>',
+              ' * @link <%= pkg.homepage %>',
+              ' * @license <%= pkg.license %>',
+              ' */\n\n'].join('\n');
 
 gulp.task('css', function() {
   gulp.src('css/deleted.css')
     .pipe(size({ showFiles: true, gzip: true }))
     .pipe(cssMin())
+    .pipe(header(banner, { pkg : pkg } ))
     .pipe(rename({ suffix: '.min' }))
     .pipe(size({ showFiles: true, gzip: true }))
     .pipe(gulp.dest('css'));
@@ -24,6 +35,7 @@ gulp.task('js', function() {
   gulp.src('js/deleted.js')
     .pipe(size({ showFiles: true, gzip: true }))
     .pipe(uglify())
+    .pipe(header(banner, { pkg : pkg } ))
     .pipe(rename({ suffix: '.min' }))
     .pipe(size({ showFiles: true, gzip: true }))
     .pipe(gulp.dest('js'));
