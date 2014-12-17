@@ -46,9 +46,9 @@ Then, you can use deleted with the following link and data attributes:
 ```html
 <a href="/some-link/for/deletion"
    class="btn--red"
-   data-delete=true
-   data-delete-prompt="Are you sure you want to delete this?"
-   data-delete-text="Confirm"
+   data-deleted=true
+   data-deleted-prompt="Are you sure you want to delete this?"
+   data-deleted-text="Confirm"
    data-cancel-text="Cancel">
   Delete
 </a>
