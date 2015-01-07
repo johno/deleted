@@ -10,6 +10,9 @@
   function onDeleteButtonClick(event) {
     var isAlreadyOpen = isOpen(event.target);
     var deleteLink = event.target.getAttribute('href');
+    var promptText = event.target.getAttribute('data-deleted-prompt');
+    var cancelText = event.target.getAttribute('data-cancel-text')
+    var confirmText = event.target.getAttribute('data-deleted-text');
     toggleClass(event.target, 'is-open');
 
     if (isAlreadyOpen) {
@@ -19,7 +22,7 @@
         return true;
       }
     } else {
-      event.target.appendChild(createDropdown(null, deleteLink));
+      event.target.appendChild(createDropdown(promptText, deleteLink, cancelText, confirmText));
     }
 
     event.target.href = '#!';
