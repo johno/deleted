@@ -9,16 +9,20 @@
 (function() {
   function onDeleteButtonClick(event) {
     var isAlreadyOpen = isOpen(event.target);
+    var deleteLink = event.target.getAttribute('href');
     toggleClass(event.target, 'is-open');
 
     if (isAlreadyOpen) {
       var dropdown = getClosestDropdown(event.target);
       if (dropdown) {
         dropdown.parentNode.className = dropdown.parentNode.className.replace('is-open', '');
+        return true;
       }
     } else {
-      event.target.appendChild(createDropdown());
+      event.target.appendChild(createDropdown(null, deleteLink));
     }
+
+    event.target.href = '#!';
   }
 
   function toggleClass(elem, className) {
@@ -47,7 +51,7 @@
     return false;
   }
 
-  function createDropdown(deletePrompt, cancelText, confirmText) {
+  function createDropdown(deletePrompt, deleteLink, cancelText, confirmText) {
     deletePrompt = deletePrompt || 'Are you sure you want to delete this?';
     cancelText = cancelText || 'Cancel';
     confirmText = confirmText || 'Confirm';
@@ -67,8 +71,9 @@
       document.createTextNode(cancelText)
     );
 
-    var confirmBtn = document.createElement('span');
+    var confirmBtn = document.createElement('a');
     confirmBtn.className = 'btn--red btn--sm';
+    confirmBtn.href = deleteLink;
     confirmBtn.appendChild(
       document.createTextNode(confirmText)
     )
