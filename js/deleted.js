@@ -10,19 +10,22 @@
   function onDeleteButtonClick(event) {
     var isAlreadyOpen = isOpen(event.target);
     var deleteLink = event.target.getAttribute('href');
+    var promptText = event.target.getAttribute('data-deleted-prompt');
+    var cancelText = event.target.getAttribute('data-cancel-text')
+    var confirmText = event.target.getAttribute('data-deleted-text');
     toggleClass(event.target, 'is-open');
 
     if (isAlreadyOpen) {
       var dropdown = getClosestDropdown(event.target);
+
       if (dropdown) {
         dropdown.parentNode.className = dropdown.parentNode.className.replace('is-open', '');
         return true;
       }
-    } else {
-      event.target.appendChild(createDropdown(null, deleteLink));
+    } else if (!event.target.querySelectorAll('.dropdown')[0]) {
+      event.target.appendChild(createDropdown(promptText, deleteLink, cancelText, confirmText));
+      event.target.href = '#!';
     }
-
-    event.target.href = '#!';
   }
 
   function toggleClass(elem, className) {
@@ -65,7 +68,8 @@
     var actions = document.createElement('div');
     actions.className = 'actions';
 
-    var cancelBtn = document.createElement('span');
+    var cancelBtn = document.createElement('a');
+    cancelBtn.href = '#!';
     cancelBtn.className = 'btn--link btn--sm';
     cancelBtn.appendChild(
       document.createTextNode(cancelText)
