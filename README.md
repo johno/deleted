@@ -1,12 +1,17 @@
 # Deleted
 
-_Currently under development._
-
 Deleted provides a slightly different experience for hard deletes. Clicking a delete button
 creates a dropdown with a confirmation and cancel button. This requires two click actions from
 the user, helping to prevent accidental deletions.
 
-See it in action on [codepen.io](http://codepen.io/johno/full/xbVeEv).
+It's dependency-free and delightfully lightweight:
+
+```
+deleted.min.js 711 B (gzipped)
+deleted.min.css 490 B (gzipped)
+```
+
+See it in action: <http://johnotander.com/deleted>.
 
 ## Installation
 
@@ -51,6 +56,19 @@ Then, you can use deleted with the following link and data attributes:
    data-deleted-text="Confirm"
    data-cancel-text="Cancel">
   Delete
+</a>
+```
+
+#### A custom example
+
+```html
+<a href="javascript:alert('custom deleted!')"
+   class="btn--red"
+   data-deleted=true
+   data-deleted-prompt="Look out, there be dragons."
+   data-deleted-text="Go ahead, delete it"
+   data-cancel-text="Nevermind">
+  Custom Delete
 </a>
 ```
 

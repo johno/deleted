@@ -1,7 +1,7 @@
 /**
  * deleted - A slightly different user experience for hard deletes.
  * @author John Otander <johnotander@gmail.com> (http://johnotander.com/)
- * @version v1.0.0
+ * @version v1.0.1
  * @link https://github.com/johnotander/deleted
  * @license MIT
  */

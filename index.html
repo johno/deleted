@@ -14,6 +14,7 @@ This requires two click actions from the user, helping to prevent accidental del
 <link rel="stylesheet" href="css/deleted.css" type="text/css">
 
 <style type="text/css">
+.mt2,
 .btn-wrap {
   margin-top: 2rem; }
 
@@ -74,12 +75,10 @@ footer {
 <body class="page">
 <div class="measure page-content">
   <h1>A Safer Delete Experience</h1>
-  <h4 class="muted">
+  <p class="h4 muted">
     Clicking a delete button creates a dropdown with a confirmation and cancel button. This requires
-    two click actions from the user, helping to prevent accidental deletions. <br><br>
-    Currently, support needs to be added for ARIA attributes and tab indexing to ensure that this
-    delete concept is accessible.
-  </h4>
+    two click actions from the user, helping to prevent accidental deletions.
+  </p>
   <div class="btn-wrap">
     <a href="javascript:alert('deleted!');"
        class="btn--red"
@@ -90,6 +89,66 @@ footer {
       Delete
     </a>
   </div>
+
+  <p class="h4 muted">
+    The markup is declarative with customizable prompt text, button text, and cancel text.
+  </p>
+  <pre>
+    <code>
+&lt;a href="javascript:alert('deleted!');"
+   class="btn--red"
+   data-deleted=true
+   data-deleted-prompt="Are you sure you want to delete this?"
+   data-deleted-text="Confirm"
+   data-cancel-text="Cancel"&gt;
+   Delete
+&lt;/a&gt;
+    </code>
+  </pre>
+
+  <p class="h4 muted">
+    There are no added dependencies, deleted is 100% vanilla JavaScript.
+  </p>
+
+  <h2 class="mt2">A customized example</h2>
+  <a href="javascript:alert('custom deleted!')"
+     class="btn--red"
+     data-deleted=true
+     data-deleted-prompt="Look out, there be dragons."
+     data-deleted-text="Go ahead, delete it"
+     data-cancel-text="Nevermind">
+    Custom Delete
+  </a>
+
+  <pre>
+    <code>
+&lt;a href="javascript:alert('custom deleted!')"
+   class="btn--red"
+   data-deleted=true
+   data-deleted-prompt="Look out, there be dragons."
+   data-deleted-text="Go ahead, delete it"
+   data-cancel-text="Nevermind"&gt;
+  Custom Delete
+&lt;/a&gt;
+    </code>
+  </pre>
+
+  <h3 class="mt2">Installing deleted</h3>
+  <p>
+    It's available on npm, bower, and github.
+  </p>
+  <pre>
+    <code>
+npm i --save deleted
+bower i --save deleted
+git clone <a href="https://github.com/johnotander/deleted">https://github.com/johnotander/deleted</a>
+    </code>
+  </pre>
+
+  <h3 class="mt2">What's missing?</h3>
+  <p class="h4 muted">
+    Currently, support needs to be added for ARIA attributes to ensure that this delete concept is accessible.
+  </p>
 </div>
 <footer>
   Crafted with &lt;3 by <a href="http://johnotander.com" title="John Otander's website">John Otander</a>
