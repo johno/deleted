@@ -68,7 +68,8 @@
     var actions = document.createElement('div');
     actions.className = 'actions';
 
-    var cancelBtn = document.createElement('span');
+    var cancelBtn = document.createElement('a');
+    cancelBtn.href = '#!';
     cancelBtn.className = 'btn--link btn--sm';
     cancelBtn.appendChild(
       document.createTextNode(cancelText)
