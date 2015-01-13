@@ -22,7 +22,7 @@
         dropdown.parentNode.className = dropdown.parentNode.className.replace('is-open', '');
         return true;
       }
-    } else if (!event.target.querySelectorAll('.dropdown')[0]) {
+    } else if (!event.target.querySelectorAll('.deleted-dropdown')[0]) {
       event.target.appendChild(createDropdown(promptText, deleteLink, cancelText, confirmText));
       event.target.href = '#!';
     }
@@ -46,7 +46,7 @@
 
   function getClosestDropdown(elem) {
     for ( ; elem && elem !== document; elem = elem.parentNode ) {
-      if (elem.classList.contains('dropdown') ) {
+      if (elem.classList.contains('deleted-dropdown') ) {
          return elem;
       }
     }
@@ -60,7 +60,7 @@
     confirmText = confirmText || 'Confirm';
 
     var dropdown = document.createElement('div');
-    dropdown.className = 'dropdown';
+    dropdown.className = 'deleted-dropdown';
     dropdown.appendChild(
       document.createTextNode(deletePrompt)
     );

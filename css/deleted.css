@@ -42,7 +42,7 @@
   z-index: 99;
 }
 
-[data-deleted] .dropdown {
+[data-deleted] .deleted-dropdown {
   background-color: #fff;
   border: thin solid #ddd;
   color: #444;
@@ -54,10 +54,10 @@
   z-index: 1;
 }
 
-[data-deleted] .dropdown .actions {
+[data-deleted] .deleted-dropdown .actions {
   text-align: right;
 }
 
-[data-deleted].is-open .dropdown {
+[data-deleted].is-open .deleted-dropdown {
   display: block;
 }
