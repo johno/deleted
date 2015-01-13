@@ -17,15 +17,15 @@
 
     if (isAlreadyOpen) {
       var dropdown = getClosestDropdown(event.target);
+
       if (dropdown) {
         dropdown.parentNode.className = dropdown.parentNode.className.replace('is-open', '');
         return true;
       }
-    } else {
+    } else if (!event.target.querySelectorAll('.dropdown')[0]) {
       event.target.appendChild(createDropdown(promptText, deleteLink, cancelText, confirmText));
+      event.target.href = '#!';
     }
-
-    event.target.href = '#!';
   }
 
   function toggleClass(elem, className) {
