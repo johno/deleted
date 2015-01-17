@@ -13,7 +13,7 @@
     var promptText = event.target.getAttribute('data-deleted-prompt');
     var cancelText = event.target.getAttribute('data-cancel-text')
     var confirmText = event.target.getAttribute('data-deleted-text');
-    toggleClass(event.target, 'is-open');
+    toggleClass(getDeletedAnchor(event.target), 'is-open');
 
     if (isAlreadyOpen) {
       var dropdown = getClosestDropdown(event.target);
@@ -48,6 +48,16 @@
     for ( ; elem && elem !== document; elem = elem.parentNode ) {
       if (elem.classList.contains('deleted-dropdown') ) {
          return elem;
+      }
+    }
+
+    return false;
+  }
+
+  function getDeletedAnchor(elem) {
+    for ( ; elem && elem !== document; elem = elem.parentNode ) {
+      if (elem.getAttribute('data-deleted') ) {
+        return elem;
       }
     }
 
