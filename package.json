@@ -1,6 +1,6 @@
 {
   "name": "deleted",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "A slightly different user experience for hard deletes.",
   "homepage": "http://johnotander.com/deleted",
   "main": "gulpfile.js",

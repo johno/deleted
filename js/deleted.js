@@ -1,7 +1,7 @@
 /**
 * deleted - A slightly different user experience for hard deletes.
 * @author John Otander <johnotander@gmail.com> (http://johnotander.com/)
-* @version v1.0.1
+* @version v1.0.4
 * @link https://github.com/johnotander/deleted
 * @license MIT
 */
@@ -13,7 +13,7 @@
     var promptText = event.target.getAttribute('data-deleted-prompt');
     var cancelText = event.target.getAttribute('data-cancel-text')
     var confirmText = event.target.getAttribute('data-deleted-text');
-    toggleClass(event.target, 'is-open');
+    toggleClass(getDeletedAnchor(event.target), 'is-open');
 
     if (isAlreadyOpen) {
       var dropdown = getClosestDropdown(event.target);
@@ -22,7 +22,7 @@
         dropdown.parentNode.className = dropdown.parentNode.className.replace('is-open', '');
         return true;
       }
-    } else if (!event.target.querySelectorAll('.dropdown')[0]) {
+    } else if (!event.target.querySelectorAll('.deleted-dropdown')[0]) {
       event.target.appendChild(createDropdown(promptText, deleteLink, cancelText, confirmText));
       event.target.href = '#!';
     }
@@ -46,8 +46,18 @@
 
   function getClosestDropdown(elem) {
     for ( ; elem && elem !== document; elem = elem.parentNode ) {
-      if (elem.classList.contains('dropdown') ) {
+      if (elem.classList.contains('deleted-dropdown') ) {
          return elem;
+      }
+    }
+
+    return false;
+  }
+
+  function getDeletedAnchor(elem) {
+    for ( ; elem && elem !== document; elem = elem.parentNode ) {
+      if (elem.getAttribute('data-deleted') ) {
+        return elem;
       }
     }
 
@@ -60,7 +70,7 @@
     confirmText = confirmText || 'Confirm';
 
     var dropdown = document.createElement('div');
-    dropdown.className = 'dropdown';
+    dropdown.className = 'deleted-dropdown';
     dropdown.appendChild(
       document.createTextNode(deletePrompt)
     );
