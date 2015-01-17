@@ -21,6 +21,11 @@ This requires two click actions from the user, helping to prevent accidental del
 .muted {
   color: #666; }
 
+.geomicon {
+  width: .85rem;
+  height: .85rem;
+}
+
 html {
   font-size: 12px; }
 
@@ -120,7 +125,8 @@ footer {
      data-deleted-prompt="Look out, there be dragons."
      data-deleted-text="Go ahead, delete it"
      data-cancel-text="Nevermind">
-    Custom Delete
+     <svg class="geomicon" data-icon="trash" viewBox="0 0 32 32" style="fill:currentcolor"><path d="M4 4 L10 4 L12 2 L20 2 L22 4 L28 4 L29 8 L3 8 z M5 10 L27 10 L26 30 L6 30 z  "></path></svg>
+    &nbsp; Custom Delete
   </a>
 
   <pre>
@@ -131,6 +137,7 @@ footer {
    data-deleted-prompt="Look out, there be dragons."
    data-deleted-text="Go ahead, delete it"
    data-cancel-text="Nevermind"&gt;
+  {{icon}}
   Custom Delete
 &lt;/a&gt;
     </code></pre>
@@ -154,7 +161,8 @@ git clone <a href="https://github.com/johnotander/deleted">https://github.com/jo
 <footer>
   Crafted with &lt;3 by <a href="http://johnotander.com" title="John Otander's website">John Otander</a>
   (<a href="https://twitter.com/4lpine" title="John Otander on Twitter (@4lpine)">@4lpine</a>). <br>
-  &lt;/&gt; available on <a href="https://github.com/johnotander/deleted" title="Deleted source code">Github</a>.
+  &lt;/&gt; available on <a href="https://github.com/johnotander/deleted" title="Deleted source code">Github</a>. <br>
+  Trash icon from <a href="http://geomicons.com/">geomicons</a>.
 </footer>
 <script src="js/deleted.js"></script>
 </body>
