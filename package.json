@@ -1,13 +1,13 @@
 {
   "name": "deleted",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A slightly different user experience for hard deletes",
   "author": "John Otander <johnotander@gmail.com> (http://johnotander.com/)",
   "repository": "johnotander/deleted",
   "files": [
     "css",
     "js"
-  ], 
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "gulp"
