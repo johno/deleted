@@ -1,4 +1,4 @@
-# Deleted
+# deleted
 
 Deleted provides a slightly different experience for hard deletes. Clicking a delete button
 creates a dropdown with a confirmation and cancel button. This requires two click actions from
@@ -15,16 +15,14 @@ See it in action: <http://johnotander.com/deleted>.
 
 ## Installation
 
-Via Bower:
-
-```
-bower install --save deleted
-```
-
-Via npm:
-
 ```
 npm install --save deleted
+```
+
+Or with git
+
+```
+git clone https://github.com/johnotander/deleted.git
 ```
 
 ## Usage
@@ -84,4 +82,6 @@ MIT
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-Crafted with <3 by [John Otander](http://johnotander.com) ([@4lpine](https://twitter.com/4lpine)).
+***
+
+> Crafted with <3 by [John Otander](http://johnotander.com) ([@4lpine](https://twitter.com/4lpine)).
